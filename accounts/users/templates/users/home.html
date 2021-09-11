@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html langs="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fitness App</title>
+    </head>
+    <style>
+        body  {
+            background: url("https://img.favpng.com/1/11/25/desktop-wallpaper-physical-fitness-high-definition-television-1080p-display-resolution-png-favpng-SJ66Ri0VMnv85GqT16785ybjm.jpg") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .button {
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        .title {
+            padding-left: 50px;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #f4511e;
+            color: #FFFFFF;
+            font-size: 120px;
+        }
+
+        .secondary {
+            padding-left: 50px;
+            color: #FFFFFF;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #f4511e;
+            font-size: 80px;
+        }
+    </style>
+    <body>
+        <h1 class="title">Fitness Tracker</h1>
+        <h2 class="secondary">Track your calories burned!</h2>
+        <button class="button" onclick="window.location.href = 'http://127.0.0.1:8000/register/';"><span>Sign Up</span></button>
+        <button class="button" onclick="window.location.href = 'http://127.0.0.1:8000/login/';"><span>Login</span></button>
+    </body>
+</html>

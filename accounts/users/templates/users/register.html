@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html langs="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fitness App</title>
+    </head>
+    <form method="post">
+        {{ form }}
+        {% csrf_token %}
+        <input type="submit" value="Register">
+    </form>
+</html>
