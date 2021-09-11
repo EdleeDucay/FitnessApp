@@ -1,28 +1,30 @@
 <html>
 <head>
 <style>
-body {
-    text-align: center;
-    height: 100%;
-  }
   
 h1 {
     color: darkgreen;
+    text-align: center;
+
 }
 h2 {
     font-size: smaller;
+    text-align: center;
+
 }
 
 .container {
     background-color: lightgrey;
-
+    margin: 20px;
+    height: 100%;
+    text-align: center;
 } 
 </style>
 
 </head>
 
 <body>
-    <a href="{% url 'edit_profile' %}">edit</a>
+    {% include 'navbar.html' %}
     <div class="container">
         <h1>Profile </h1>
         {% if display_message %}
@@ -34,7 +36,7 @@ h2 {
         <p>Weight: {{weight}}</p>
         <p>Age: {{age}}</p>
         <p>Height: {{height}}</p>
-        
+        <a href="{% url 'edit_profile' %}">edit</a>
     
 
     </div>
