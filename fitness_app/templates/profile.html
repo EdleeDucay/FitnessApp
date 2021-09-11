@@ -9,6 +9,9 @@ body {
 h1 {
     color: darkgreen;
 }
+h2 {
+    font-size: smaller;
+}
 
 .container {
     background-color: lightgrey;
@@ -22,12 +25,18 @@ h1 {
     <a href="{% url 'edit_profile' %}">edit</a>
     <div class="container">
         <h1>Profile </h1>
-        <p>Username: </p>
-        <p>First name: </p>
-        <p>Last name: </p>
-        <p>Weight: </p>
-        <p>Height: </p>
-        <p>Age: </p>
+        {% if display_message %}
+            <h2>Update your profile with your weight, age and height to get the most out of this app</h2>
+        {% endif %}
+        <p>Username: {{username}}</p>
+        <p>First name: {{first_name}}</p>
+        <p>Last name: {{last_name}}</p>
+        <p>Weight: {{weight}}</p>
+        <p>Age: {{age}}</p>
+        <p>Height: {{height}}</p>
+        
+    
+
     </div>
 </body>
 
