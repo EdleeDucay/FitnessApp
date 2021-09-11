@@ -19,15 +19,14 @@ h1 {
 </head>
 
 <body>
-    <a href="{% url 'edit_profile' %}">edit</a>
+    
     <div class="container">
         <h1>Profile </h1>
-        <p>Username: </p>
-        <p>First name: </p>
-        <p>Last name: </p>
-        <p>Weight: </p>
-        <p>Height: </p>
-        <p>Age: </p>
+        <form action = "" method = "post">
+            {% csrf_token %}
+            {{form }}
+            <input type="submit" value=Submit>
+        </form>
     </div>
 </body>
 
