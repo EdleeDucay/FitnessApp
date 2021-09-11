@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div>
+            ADD WORKOUT PAGE
+        </div>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" name="addSet" value="Add Set">
+            <input type="submit" name="addWorkout" value="Finish Workout">
+
+        </form>
+        <!-- <a href="{% url 'addSet' %}">Click here to add a set</a> -->
+        <table>
+            <tr>
+                <th>Exercise</th>
+                <th>Weight</th>
+                <th>Reps</th>
+            </tr>
+            {% for exercise in exercise_sets %}
+            <tr>
+                <td>{{exercise.exercise.value}}</td>
+                <td>{{exercise.weight.value}}</td>
+                <td>{{exercise.reps.value}}</td>
+
+
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </body>
+</html>
