@@ -10,7 +10,7 @@ def profile(request):
     #get username of logged in user from the request
     username = None
     username = request.user.username
-
+    print(username)
     #get the user object from database
     user = User.objects.get(username = username)
 
