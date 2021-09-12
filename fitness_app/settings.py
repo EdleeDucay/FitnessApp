@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'profile_page.apps.ProfilePageConfig',
     'add_workout.apps.AddWorkoutConfig',
     'django.contrib.admin',
     'django.contrib.auth',

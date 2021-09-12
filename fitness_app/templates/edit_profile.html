@@ -1,0 +1,33 @@
+<html>
+<head>
+<style>
+body {
+    text-align: center;
+    height: 100%;
+  }
+  
+h1 {
+    color: darkgreen;
+}
+
+.container {
+    background-color: lightgrey;
+
+} 
+</style>
+
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>Edit Profile </h1>
+        <form action = "" method = "post">
+            {% csrf_token %}
+            {{form.as_ul}}
+            <input type="submit" value=Submit>
+        </form>
+    </div>
+</body>
+
+</html>
