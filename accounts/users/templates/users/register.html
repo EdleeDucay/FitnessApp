@@ -3,10 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <title>Fitness App</title>
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
     </head>
-    <form method="post">
-        {{ form }}
-        {% csrf_token %}
-        <input type="submit" value="Register">
-    </form>
+    <style>
+        body  {
+            background: url("https://img.favpng.com/1/11/25/desktop-wallpaper-physical-fitness-high-definition-television-1080p-display-resolution-png-favpng-SJ66Ri0VMnv85GqT16785ybjm.jpg") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+    <body>
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            Already Registered? Sign in <a href='http://127.0.0.1:8000/login/';">here!</a>
+            <br>
+            <input type="submit" value="Register">
+        </form>
+    </body>
 </html>
