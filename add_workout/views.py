@@ -43,7 +43,11 @@ def addWorkout(request):
             exercise_sets.clear()
 
             # Redirect to homepage
-            return HttpResponse('done')
+            exercise_set = ExerciseSet.objects.all()
+            exercise_list = list(exercise_set)
+            print(exercise_list)
+            # return render(request, 'view_workout.html', {'exercise_sets': exercise_list})
+            return redirect("viewWorkout")
 
         elif 'reset' in request.POST:
             exercise_sets.clear()
@@ -53,5 +57,12 @@ def addWorkout(request):
     else:
         exercise_sets.clear()
         form = SetForm()
-
+    print("What are you doing here")
+    print(request.method)
     return render(request, 'add_workout.html', {'form': form, 'exercise_sets': exercise_sets})
+
+def viewWorkout(request):
+    print("fuck")
+    exercise_set = ExerciseSet.objects.all()
+    exercise_list = list(exercise_set)
+    return render(request, 'view_workout.html', {'exercise_sets': exercise_list})
