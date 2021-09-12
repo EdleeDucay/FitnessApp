@@ -2,7 +2,7 @@
 <html langs="en">
     <head>
         <meta charset="UTF-8">
-        <title>Fitness App</title>
+        <title>Login</title>
          <!-- Latest compiled and minified CSS -->
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
@@ -106,6 +106,11 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" name="password" placeholder="Password">
                             </div>
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <p style="color: red">{{ error}}</p>
+                                {% endfor %}
+                            {% endfor %}
                             <a href='http://127.0.0.1:8000/register/';">Not registered? Click here to sign up!</a>
                             <br>
                             <button class="button" input type="submit" value="Login"><span>Login</span></button>
