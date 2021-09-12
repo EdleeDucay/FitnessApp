@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html langs="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign Up</title>
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    </head>
+    <style>
+        body  {
+            background: url("https://img.favpng.com/1/11/25/desktop-wallpaper-physical-fitness-high-definition-television-1080p-display-resolution-png-favpng-SJ66Ri0VMnv85GqT16785ybjm.jpg") no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        form {
+            color: black ;
+        }
+        .button {
+            border-radius: 4px;
+            color: #f4511e;
+            border-color: #f4511e;
+            border-width: 4px;
+            background-color: rgba(0,0,0,0);
+            text-align: center;
+            font-size: 28px;
+            padding: 5px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+        .title {
+            padding-left: 50px;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #f4511e;
+            color: #f4511e;
+            font-size: 36px;
+        }   
+        .col-sm-6 {
+            background-color: rgba(0,0,0,0);
+        }
+        .panel-default {
+            background-color: rgba(0,0,0,0);
+            border-color: #f4511e;
+            border-width: 4px;
+        }
+        .panel-body {
+            background-color: rgba(0,0,0,0);
+            border-color: #f4511e;
+            border-width: 1px; 
+        }
+    </style>
+    <body>
+        <br>
+        <br>
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            <div class='container'>
+                <div class='col-sm-6'>
+                    <div class='panel panel-default'>
+                        <div class='panel-heading'>
+                            <p class='title'>Sign Up</p>
+                        </div>
+                        <div class='panel-body'>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="User Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password1" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" name="password2" placeholder="Confirm Password">
+                            </div>
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <p style="color: red">{{ error}}</p>
+                                {% endfor %}
+                            {% endfor %}
+                            <a href='http://127.0.0.1:8000/login/';">Already registered? Click here to log in!</a>
+                            <br>
+                            <button class="button" input type="submit" value="Register"><span>Register</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
