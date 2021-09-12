@@ -11,6 +11,8 @@ class SetForm(forms.ModelForm):
 
     class Meta:
         model = ExerciseSet
-        fields = ('exercise', 'weight', 'reps')
-
+        fields = ('exercise', 'weight', 'reps', 'time')
+        labels = {
+            'weight': ('Weight(kg)')
+        }
 

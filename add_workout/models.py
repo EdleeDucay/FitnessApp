@@ -10,9 +10,9 @@ class Workout(models.Model):
     # user = models.ForeignKey(User)
 
 Exercise_Choices = (
-    ('bench', "BENCH"),
-    ('squat', 'SQUAT'),
-    ('deadlift', 'DEADLIFT'),
+    ('bench', "bench"),
+    ('squat', 'squat'),
+    ('deadlift', 'deadlift'),
 )
 
 class ExerciseSet(models.Model):
