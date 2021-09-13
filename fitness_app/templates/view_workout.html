@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <title>Fitness App</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    </head>
+    <style>
+        input{
+            margin-top: 20px;
+
+        }
+
+        .btn-addSet {
+            background-color: rgba(16, 196, 0, 0.5);
+            -webkit-transition: .2s ease-in-out;
+                -moz-transition: .2s ease-in-out;
+                    transition: .2s ease-in-out;
+        }
+
+        .btn-addSet:hover{
+            background-color: rgba(16, 196, 0, 1);
+        }
+        
+        .btn-reset{
+            background-color: rgba(220, 20, 60, 0.5);
+            -webkit-transition: .2s ease-in-out;
+                -moz-transition: .2s ease-in-out;
+                    transition: .2s ease-in-out;
+        }
+        .btn-reset:hover{
+            background-color: rgba(220, 20, 60, 1);
+
+        }
+        .btn-addWorkout{
+            background-color: rgba(0, 132, 255, 0.5);
+            -webkit-transition: .2s ease-in-out;
+                -moz-transition: .2s ease-in-out;
+                    transition: .2s ease-in-out;
+
+        }
+        .btn-addWorkout:hover{
+            background-color: rgba(0, 132, 255, 1);
+
+        }
+        
+        .mainButtons{
+            margin-bottom: 10px;
+            
+        }
+
+        th {
+            text-align: center;
+            background-color: rgba(95, 158, 160, 0.411);
+        }
+
+    </style>
+
+<body class="container text-center">
+    {% include 'navbar.html' %}
+    <table class="table">
+        <tr>
+            <th>Exercise</th>
+            <th>Weight (kg)</th>
+            <th>Reps</th>
+            <th>Time</th>
+
+        </tr>
+        {% for exercise in exercise_sets %}
+        <tr>
+            <td>{{exercise.exercise}}</td>
+            <td>{{exercise.weight}}</td>
+            <td>{{exercise.reps}}</td>
+            <td>{{exercise.time}}</td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
